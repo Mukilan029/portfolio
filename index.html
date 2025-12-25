@@ -48,24 +48,20 @@
         ::-webkit-scrollbar-thumb { background: #333; border-radius: 4px; }
         ::-webkit-scrollbar-thumb:hover { background: var(--primary); }
 
-        /* --- Cursor (UPDATED LOGIC) --- */
+        /* --- Cursor --- */
         #cursor {
             position: fixed; top: 0; left: 0; width: 15px; height: 15px;
-            border: 1px solid white; /* Default Neutral Color */
+            border: 1px solid white;
             border-radius: 50%;
             pointer-events: none; z-index: 9999;
             transform: translate(-50%, -50%);
             transition: width 0.3s, height 0.3s, background-color 0.3s, border-color 0.3s;
-            mix-blend-mode: difference; /* Visible on all backgrounds */
+            mix-blend-mode: difference;
         }
-        
-        /* When Hovering Interactive Elements */
         #cursor.hovered {
             width: 50px; height: 50px;
-            background-color: var(--primary); /* Turns ORANGE */
-            border-color: var(--primary);
-            opacity: 0.8;
-            mix-blend-mode: normal; /* Removes inversion to show true Orange */
+            background-color: var(--primary); border-color: var(--primary); opacity: 0.8;
+            mix-blend-mode: normal;
         }
 
         /* --- Background --- */
@@ -452,42 +448,42 @@
             <div>
                 <h2 class="reveal-text" style="color: var(--primary); margin-bottom: 2rem;">CERTIFICATIONS</h2>
                 
-                <div class="cert-item" onclick="openModal('Certificates/MyCaptain Full Stack Development (8 weeks) workshop certificate (4).jpg')">
+                <div class="cert-item" onclick="openModal('Certificates/MyCaptain%20Full%20Stack%20Development%20(8%20weeks)%20workshop%20certificate%20(4).jpg')">
                     <div class="cert-title">Full Stack Development</div>
                     <div class="cert-meta">MyCaptain</div>
                 </div>
                 
-                <div class="cert-item" style="margin-top: 1rem;" onclick="openModal('Certificates/MyCaptain Artificial Intelligence workshop certificate (1).jpg')">
+                <div class="cert-item" style="margin-top: 1rem;" onclick="openModal('Certificates/MyCaptain%20Artificial%20Intelligence%20workshop%20certificate%20(1).jpg')">
                     <div class="cert-title">Artificial Intelligence</div>
                     <div class="cert-meta">MyCaptain</div>
                 </div>
 
-                <div class="cert-item" style="margin-top: 1rem;" onclick="openModal('Certificates/MyCaptain Python Programming workshop certificate (1).jpg')">
+                <div class="cert-item" style="margin-top: 1rem;" onclick="openModal('Certificates/MyCaptain%20Python%20Programming%20workshop%20certificate%20(1).jpg')">
                     <div class="cert-title">Python Programming</div>
                     <div class="cert-meta">MyCaptain</div>
                 </div>
 
-                <div class="cert-item" style="margin-top: 1rem;" onclick="openModal('Certificates/MyCaptain Java Programming workshop certificate.jpg')">
+                <div class="cert-item" style="margin-top: 1rem;" onclick="openModal('Certificates/MyCaptain%20Java%20Programming%20workshop%20certificate.jpg')">
                     <div class="cert-title">Java Programming</div>
                     <div class="cert-meta">MyCaptain</div>
                 </div>
 
-                <div class="cert-item" style="margin-top: 1rem;" onclick="openModal('Certificates/Salesforce Cloud.jpg')">
+                <div class="cert-item" style="margin-top: 1rem;" onclick="openModal('Certificates/Salesforce%20Cloud.jpg')">
                     <div class="cert-title">Agentforce Specialist</div>
                     <div class="cert-meta">Salesforce</div>
                 </div>
 
-                <div class="cert-item" style="margin-top: 1rem;" onclick="openModal('Certificates/Oracle Cloud.jpg')">
+                <div class="cert-item" style="margin-top: 1rem;" onclick="openModal('Certificates/Oracle%20Cloud.jpg')">
                     <div class="cert-title">Cloud ERP Essentials</div>
                     <div class="cert-meta">Oracle</div>
                 </div>
 
-                <div class="cert-item" style="margin-top: 1rem;" onclick="openModal('Certificates/Oracle Ai Agent.jpg')">
+                <div class="cert-item" style="margin-top: 1rem;" onclick="openModal('Certificates/Oracle%20Ai%20Agent.jpg')">
                     <div class="cert-title">AI Agent Studio</div>
                     <div class="cert-meta">Oracle</div>
                 </div>
 
-                <div class="cert-item" style="margin-top: 1rem;" onclick="openModal('Certificates/MyCaptain Photography workshop certificate.jpg')">
+                <div class="cert-item" style="margin-top: 1rem;" onclick="openModal('Certificates/MyCaptain%20Photography%20workshop%20certificate.jpg')">
                     <div class="cert-title">Photography</div>
                     <div class="cert-meta">MyCaptain</div>
                 </div>
@@ -522,7 +518,7 @@
         gsap.ticker.add((time) => { lenis.raf(time * 1000); });
         gsap.ticker.lagSmoothing(0);
 
-        // --- 2. TEXT SCRAMBLE ANIMATION (Hero Title) ---
+        // --- 2. TEXT SCRAMBLE ANIMATION ---
         class TextScramble {
             constructor(el) {
                 this.el = el;
@@ -577,14 +573,9 @@
             }
         }
 
-        // Trigger Scramble on Load
         const el = document.getElementById('scramble-text');
         const fx = new TextScramble(el);
-        
-        // Wait slightly then scramble text
-        setTimeout(() => {
-            fx.setText('AI & Full-Stack Developer'); 
-        }, 500);
+        setTimeout(() => { fx.setText('AI & Full-Stack Developer'); }, 500);
 
 
         // --- 3. Modal & Cursor Logic ---
